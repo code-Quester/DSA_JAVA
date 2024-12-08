@@ -1,5 +1,5 @@
 package graphs;
-import java.util.ArrayList;
+import java.util.*;
 
 public class AdjacencyList {
     public static class Edge{

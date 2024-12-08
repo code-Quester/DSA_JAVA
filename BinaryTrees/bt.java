@@ -1,6 +1,10 @@
 package BinaryTrees;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+
+
 
 public class bt {
     static class Node{
@@ -114,6 +118,34 @@ public class bt {
             Kth_level(root.left, i+1,k);
             Kth_level(root.right, i+1,k);
         }
+        public List<List<Integer>> levelOrder_1(Node root) {
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        List<Integer> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        if(root==null) return result;
+        while(!q.isEmpty()){
+            Node curr = q.remove();
+            if(curr == null){
+                result.add(new ArrayList<>(list));
+                list.clear();
+                if(q.isEmpty()){
+                   break;
+                }
+                q.add(null);
+            }else{
+                list.add(curr.data);
+                if(curr.left != null){
+                    q.add(curr.left);
+                }
+                if(curr.right != null){
+                    q.add(curr.right);
+                }
+            }
+        }
+        return result;
+    }
     }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -131,6 +163,9 @@ public class bt {
         // tree.postorder(root);
 
         tree.levelOrder(root);
+        List<List<Integer>> result = new ArrayList<>();
+        result = tree.levelOrder_1(root);
+        System.out.println(result);
         System.out.println("the elements in the kth level ");
         // tree.levelOrder_Kthlevel(root, 3);
 
