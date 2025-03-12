@@ -108,9 +108,9 @@ public class bst {
         tree.inorder(root);
         // System.out.println(search(root, 7));
         System.out.println();
-        // root = delete(root, 10);
+        // root = delete(root, 8);
         // tree.inorder(root);
-        printInRange(root, 1, 14);
+        printInRange(root, 6, 14);
 
     }
 }

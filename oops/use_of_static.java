@@ -8,11 +8,11 @@ public class use_of_static {
         System.out.println(s1.getname());
         System.out.println(s1.getrollno());
         
-        s1.schoolname = "HCS";
-        Student s2 = new Student(57);
-        System.out.println(s2.schoolname);
-        s2.schoolname = "NGHSS";
-        System.out.println(s1.schoolname);
+        Student.schoolname = "HCS";
+        // Student s2 = new Student(57);
+        System.out.println(Student.schoolname);
+        Student.schoolname = "NGHSS";
+        System.out.println(Student.schoolname);
 
         Student.change_schoolname("st.thomas");
         System.out.println(Student.schoolname);

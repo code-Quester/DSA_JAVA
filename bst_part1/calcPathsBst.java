@@ -41,16 +41,9 @@ public class calcPathsBst {
         path.add(root.data);
         if (root.left == null && root.right == null) {
             System.out.println(path);
-            // path.remove(path.size()-1);
-            // return;
         }
-        // path.add(root.data);
-        // if (root.left!=null) {
         rootToLeafPaths(root.left, path);
-        // }
-        // if (root.right !=null) {
         rootToLeafPaths(root.right, path);
-        // }
         path.remove(path.size()-1);
     }
     public static void main(String[] args) {
@@ -63,6 +56,5 @@ public class calcPathsBst {
         tree.inorder(root);
         System.out.println();
         rootToLeafPaths(root,new ArrayList<>());
-
     }
 }
